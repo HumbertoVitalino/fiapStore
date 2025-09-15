@@ -2,6 +2,7 @@ package br.com.fiap.fiapstore;
 
 import java.io.*;
 
+import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
@@ -21,6 +22,11 @@ public class HelloServlet extends HttpServlet {
         out.println("<html><body>");
         out.println("<h1>" + message + "</h1>");
         out.println("</body></html>");
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        super.doPost(request, response);
     }
 
     public void destroy() {
